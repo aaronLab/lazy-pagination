@@ -18,6 +18,9 @@ class ViewController: UIViewController {
   private let scrollView = UIScrollView()
     .then {
       $0.isPagingEnabled = true
+      $0.bounces = false
+      $0.showsVerticalScrollIndicator = false
+      $0.showsHorizontalScrollIndicator = false
     }
   
   private let contentView = UIView()
@@ -30,13 +33,9 @@ class ViewController: UIViewController {
       $0.axis = .horizontal
     }
   
-  private lazy var contentViewControllers: Array<ContentViewController> = [
-    ContentViewController(title: "Menu 1"),
-    ContentViewController(title: "Menu 2"),
-    ContentViewController(title: "Menu 3"),
-    ContentViewController(title: "Menu 4"),
-    ContentViewController(title: "Menu 5")
-  ]
+  private lazy var contentViewControllers: Array<ContentViewController> = []
+  
+  private let numberOfMenu: Int = 5
   
   private var loadedContentViewControllerIndexes: Set<Int> = []
   
@@ -74,7 +73,7 @@ class ViewController: UIViewController {
     contentView.snp.makeConstraints {
       $0.edges.equalToSuperview()
       $0.height.equalToSuperview()
-      $0.width.equalToSuperview().multipliedBy(contentViewControllers.count)
+      $0.width.equalToSuperview().multipliedBy(numberOfMenu)
     }
   }
   
@@ -86,11 +85,12 @@ class ViewController: UIViewController {
   }
   
   private func loadContentViewController(at page: Int) {
-    guard let viewController = contentViewControllers[safe: page],
+    guard contentViewControllers[safe: page] == nil,
           !loadedContentViewControllerIndexes.contains(page) else {
       return
     }
     
+    let viewController = ContentViewController(title: "Menu \(page)")
     contentViewControllers.append(viewController)
     
     loadedContentViewControllerIndexes.insert(page)
@@ -106,13 +106,17 @@ class ViewController: UIViewController {
   }
   
   private func bindScroll() {
-    scrollView.rx.didEndDecelerating
+    scrollView.rx.contentOffset
       .withUnretained(self)
-      .bind(onNext: { owner, _ in
+      .bind(onNext: { owner, offset in
         let pageWidth = owner.scrollView.frame.width
-        let page = Int(floor((owner.scrollView.contentOffset.x - pageWidth) / pageWidth) + 1)
+        let currentPage = floor((owner.scrollView.contentOffset.x - pageWidth) / pageWidth) + 1
         
-        print("Current page: \(page)")
+        guard !currentPage.isNaN else {
+          return
+        }
+        
+        let page = Int(currentPage)
         
         owner.loadContentViewController(at: page)
       })

@@ -24,11 +24,12 @@ class ContentViewController: UIViewController {
     
     print("Title initialized with \(title)")
     
-    guard let page = Int(title.split(separator: " ")[1]) else {
+    guard let pageStr = title.split(separator: " ")[safe: 1],
+          let page = Int(pageStr) else {
       view.backgroundColor = .red
       return
     }
     
-    view.backgroundColor = [UIColor.orange, UIColor.gray, UIColor.green, UIColor.brown, UIColor.purple][page - 1]
+    view.backgroundColor = [UIColor.orange, UIColor.gray, UIColor.green, UIColor.brown, UIColor.purple][page]
   }
 }
