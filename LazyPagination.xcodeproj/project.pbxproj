@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A5C9883695BBE97520A1FD6 /* Pods_LazyPagination.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A47D9915FB504AE0EFC8EB2 /* Pods_LazyPagination.framework */; };
+		A445A56628794B7A0095C276 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445A56528794B7A0095C276 /* ContentViewController.swift */; };
+		A445A56828794DCB0095C276 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A445A56728794DCB0095C276 /* Array+Ext.swift */; };
 		A45D968B2879467C007FE4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D968A2879467C007FE4A6 /* AppDelegate.swift */; };
 		A45D968F2879467C007FE4A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D968E2879467C007FE4A6 /* ViewController.swift */; };
 		A45D96942879467E007FE4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A45D96932879467E007FE4A6 /* Assets.xcassets */; };
@@ -14,12 +17,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A47D9915FB504AE0EFC8EB2 /* Pods_LazyPagination.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LazyPagination.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B131F8EB8356D7B26DC1A1B /* Pods-LazyPagination.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyPagination.release.xcconfig"; path = "Target Support Files/Pods-LazyPagination/Pods-LazyPagination.release.xcconfig"; sourceTree = "<group>"; };
+		A445A56528794B7A0095C276 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		A445A56728794DCB0095C276 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		A45D96872879467C007FE4A6 /* LazyPagination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyPagination.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45D968A2879467C007FE4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A45D968E2879467C007FE4A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A45D96932879467E007FE4A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A45D96962879467E007FE4A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A45D96982879467E007FE4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2400DF684C01EA01E2B6788 /* Pods-LazyPagination.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LazyPagination.debug.xcconfig"; path = "Target Support Files/Pods-LazyPagination/Pods-LazyPagination.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5C9883695BBE97520A1FD6 /* Pods_LazyPagination.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		772954EF51E2517C39D20921 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2400DF684C01EA01E2B6788 /* Pods-LazyPagination.debug.xcconfig */,
+				7B131F8EB8356D7B26DC1A1B /* Pods-LazyPagination.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9C1FE42CCF02CF7F8B4F670A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A47D9915FB504AE0EFC8EB2 /* Pods_LazyPagination.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A45D967E2879467C007FE4A6 = {
 			isa = PBXGroup;
 			children = (
 				A45D96892879467C007FE4A6 /* LazyPagination */,
 				A45D96882879467C007FE4A6 /* Products */,
+				772954EF51E2517C39D20921 /* Pods */,
+				9C1FE42CCF02CF7F8B4F670A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +82,8 @@
 			children = (
 				A45D968A2879467C007FE4A6 /* AppDelegate.swift */,
 				A45D968E2879467C007FE4A6 /* ViewController.swift */,
+				A445A56728794DCB0095C276 /* Array+Ext.swift */,
+				A445A56528794B7A0095C276 /* ContentViewController.swift */,
 				A45D96932879467E007FE4A6 /* Assets.xcassets */,
 				A45D96952879467E007FE4A6 /* LaunchScreen.storyboard */,
 				A45D96982879467E007FE4A6 /* Info.plist */,
@@ -68,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A45D969B2879467E007FE4A6 /* Build configuration list for PBXNativeTarget "LazyPagination" */;
 			buildPhases = (
+				5ACD4F8762B83EAE131D668D /* [CP] Check Pods Manifest.lock */,
 				A45D96832879467C007FE4A6 /* Sources */,
 				A45D96842879467C007FE4A6 /* Frameworks */,
 				A45D96852879467C007FE4A6 /* Resources */,
+				B4749E4BCEE815F4EC35AA18 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +158,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5ACD4F8762B83EAE131D668D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LazyPagination-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4749E4BCEE815F4EC35AA18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazyPagination/Pods-LazyPagination-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LazyPagination/Pods-LazyPagination-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LazyPagination/Pods-LazyPagination-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A45D96832879467C007FE4A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A445A56628794B7A0095C276 /* ContentViewController.swift in Sources */,
 				A45D968F2879467C007FE4A6 /* ViewController.swift in Sources */,
+				A445A56828794DCB0095C276 /* Array+Ext.swift in Sources */,
 				A45D968B2879467C007FE4A6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +342,7 @@
 		};
 		A45D969C2879467E007FE4A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2400DF684C01EA01E2B6788 /* Pods-LazyPagination.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,6 +371,7 @@
 		};
 		A45D969D2879467E007FE4A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B131F8EB8356D7B26DC1A1B /* Pods-LazyPagination.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
